@@ -1,6 +1,6 @@
 {
     "author": "Rafael Prenholato <rprenhol@gmail.com>",
-    "description": "Manipulador dos links de busca do Catálogo de Materiais da BEC (https://www.bec.sp.gov.br)",
+    "description": "Manipulador dos links de busca do Catálogo de Materiais da Bolsa Eletrônica de Compras do Governo do Estado de São Paulo (https://www.bec.sp.gov.br)",
     "manifest_version": 2,
     "name": "BecLink | Anchor handler",
     "homepage_url": "https://github.com/rprenhol/beclink",
@@ -13,7 +13,7 @@
         "tabs","activeTab"
     ],
 
-    "browser_action": "icons/beclink.png",
+    "browser_action": {},
 
     "content_scripts": [
         {
