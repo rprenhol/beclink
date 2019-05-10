@@ -4,7 +4,7 @@
     "manifest_version": 2,
     "name": "BecLink | Anchor handler",
     "homepage_url": "https://github.com/rprenhol/",
-    "version": "1.2.0",
+    "version": "1.2.2",
     "icons": {
         "48": "icons/icon-48.png",
         "92": "icons/icon-92.png"
@@ -17,9 +17,7 @@
     "content_scripts": [
         {
             "matches": ["https://www.bec.sp.gov.br/*"],
-            "js": [
-                "js/beclink.js"
-            ]
+            "js": ["js/beclink.js"]
         }
     ]
 }
