@@ -8,6 +8,16 @@ document.addEventListener('DOMNodeInserted', function() {
         }
     }
 
+    // Nova aba com clique primário e Ctrl
+    // var ctrlDown = false;
+    
+    // window.addEventListener('keydown', function(e) {
+    //     ctrlDown = e.ctrlKey; // Ctrl abaixado
+    // });
+    // window.addEventListener('keyup', function(e) {
+    //     ctrlDown = e.ctrlKey; // Ctrl levantado
+    // });
+
     // Painel de filtros por seções
     var secoes = ['Grupo','Classe','Material'];
 
@@ -19,10 +29,12 @@ document.addEventListener('DOMNodeInserted', function() {
         }
     }
 
-    // Action de formulário é executado em nova aba
+    // Action de formulário é executado em nova aba com botão do meio
     function targetBlank(e) {
-        if(e.button == 1) {
+        if(e.button == 1 || e.ctrlKey) {
             document.forms['form1'].setAttribute('target', '_blank');
+        } else {
+            document.forms['form1'].removeAttribute('target');
         }
     }
 });
