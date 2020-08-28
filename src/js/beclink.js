@@ -7,7 +7,10 @@ document.addEventListener('DOMNodeInserted', function() {
             items[i].setAttribute('href',(link.split(",")[4]).replace(/\"/g,''));
         }
     }
+});
 
+// Seleciona links elegíveis para manipulação
+window.onload = function() {
     // Painel de filtros por seções
     var secoes = ['Grupo','Classe','Material'];
 
@@ -18,14 +21,21 @@ document.addEventListener('DOMNodeInserted', function() {
             links[j].addEventListener('mousedown', targetBlank); // atribui evento
         }
     }
+}
 
-    // Action de formulário é executado em nova aba com botão do meio
-    // ou com a tecla Ctrl pressionada
-    function targetBlank(e) {
-        if(e.button == 1 || e.ctrlKey) {
-            document.forms['form1'].setAttribute('target', '_blank');
-        } else {
-            document.forms['form1'].removeAttribute('target');
-        }
+// Action de formulário é executado em nova aba com botão do meio
+// ou com a tecla Ctrl pressionada
+function targetBlank(e) {
+    var target = e.target || e.srcElement;
+    console.log(e.button + ' | ' + e.ctrlKey + ' | ' + target.toString().split('\'')[1]);
+    if(e.button == 1 || e.ctrlKey) {
+        document.forms['form1'].setAttribute('target', '_blank');
+        document.forms['form1'].__EVENTTARGET.value = target.toString().split('\'')[1];
+        document.forms['form1'].__EVENTARGUMENT.value = '';
+        document.forms['form1'].submit();
+        e.preventDefault();
+    } else {
+        document.forms['form1'].removeAttribute('target');
     }
-});
+    return false;
+}
