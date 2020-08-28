@@ -7,25 +7,22 @@ document.addEventListener('DOMNodeInserted', function() {
             items[i].setAttribute('href',(link.split(",")[4]).replace(/\"/g,''));
         }
     }
-    
+
+    // Painel de filtros por seções
     var secoes = ['Grupo','Classe','Material'];
 
+    // Varre links do painel de filtro
     for(var i = 0; i < secoes.length; i++) {
         let links = document.querySelectorAll('#ContentPlaceHolder1_gvFiltro' + secoes[i] + ' a');
         for(var j = 0; j < links.length; j++) {
-            links[j].addEventListener('mousedown', targetBlank);
+            links[j].addEventListener('mousedown', targetBlank); // atribui evento
         }
     }
 
+    // Action de formulário é executado em nova aba
     function targetBlank(e) {
         if(e.button == 1) {
             document.forms['form1'].setAttribute('target', '_blank');
         }
     }
 });
-
-
-
-
-// https://www.bec.sp.gov.br/BEC_Catalogo_ui/CatalogoPesquisa3.aspx?chave=&pesquisa=Y&cod_id=&ds_item=papel
-// https://www.bec.sp.gov.br/BEC_Catalogo_ui/CatalogoPesquisa3.aspx?chave=&pesquisa=Y&cod_id=&ds_item=papel
