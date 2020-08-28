@@ -3,7 +3,7 @@
     "description": "Manipulador dos links de busca do Catálogo de Materiais da BEC do Governo do Estado de São Paulo (https://www.bec.sp.gov.br)",
     "manifest_version": 2,
     "name": "BecLink | Manipulador de link",
-    "homepage_url": "https://github.com/rprenhol/",
+    "homepage_url": "https://github.com/rprenhol/beclink",
     "version": "1.3",
     "icons": {
         "48": "icons/icon-48.png",
